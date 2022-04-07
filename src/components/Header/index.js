@@ -18,7 +18,7 @@ const Header = () => (
             <Navbar.Brand href="#home">
               <img
                 src={`${process.env.PUBLIC_URL}/assets/images/logo-black.png`}
-                width="80"
+                width="120"
                 height="80"
                 alt="Back To 90s logo"
               />
