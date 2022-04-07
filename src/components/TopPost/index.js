@@ -5,7 +5,7 @@ const TopPost = () => (
 
 
   <section>
-    Je suis l'article start du moment.
+    
   </section>
 )
 
