@@ -14,7 +14,7 @@ const Header = () => (
 
 
         <Row className="align-items-center w-100">
-          <Col >
+          <Col xs='6' lg='2' >
             <Navbar.Brand href="#home">
               <img
                 src={`${process.env.PUBLIC_URL}/assets/images/logo-black.png`}
@@ -25,13 +25,16 @@ const Header = () => (
             </Navbar.Brand>
           </Col>
 
-          <Col className="text-end" >
+          {/* Title appear when the screen is more less large */}
+          {/* <Col xs="6" className="text-center d-block d-lg-none"><h1 className="fw-bold"> Backto90s</h1></Col> */}
+
+          <Col xs="6" lg='1' className="text-end" >
             <Navbar.Toggle aria-controls="navbar-nav" />
           </Col>
 
 
 
-          <Col lg="8">
+          <Col lg="6">
             <Navbar.Collapse id="navbar-nav">
               <Nav className="text-center" >
                 <Nav.Link className="mx-2 fw-bold roboto" href="#home">Home</Nav.Link>
@@ -49,7 +52,7 @@ const Header = () => (
 
 
 
-
+<Col lg='3'>
         <Form className="d-flex">
           <FormControl
             type="search"
@@ -60,6 +63,7 @@ const Header = () => (
           />
           <Button style={{ backgroundColor: "rgba(40, 38, 38, 1)", borderRadius: "5px" }}><BsSearch /></Button>
         </Form>
+</Col>
       </Container>
     </Navbar>
   </header>
