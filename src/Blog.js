@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './Blog.css';
 
 // Components
 import Header from './components/Header';
-import TopPost from './components/TopPost';
+import Posts from './components/Posts';
 
 
 
@@ -12,7 +12,7 @@ function Blog() {
   return (
     <div className="App">
     <Header />
-    <TopPost />
+    <Posts />
     </div>
   );
 }
