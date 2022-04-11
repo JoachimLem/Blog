@@ -1,6 +1,12 @@
 import React from 'react';
+
+//Contents for PostPage
 import TopPost from '../TopPost';
 import Post from '../Post';
+import Tags from '../Tags';
+
+
+//Utils
 import { Container, Row, Col } from 'react-bootstrap';
 
 
@@ -14,7 +20,7 @@ const Posts = () => (
 
 
       {/* Posts Area */}
-      <Row>
+      <Row className="flex-lg-row flex-column-reverse ">
 
         {/* List of Posts */}
         <Col lg="8">
@@ -28,8 +34,7 @@ const Posts = () => (
 
         {/* Area for Tags Components */}
         <Col className="col 4">
-          <Row> Je suis les tgs populaire et nouveautés</Row>
-          <Row>Je suis les tags</Row>
+          <Tags />
         </Col>
         {/* .................................................. */}
 
