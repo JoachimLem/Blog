@@ -18,19 +18,18 @@ const NotFound = () => {
           </Col>
           </Row>
 
-          <Row>
+          <Row className="text-center">>
             <Col className="d-flex flex-column justify-content-end align-items-center" style={{color:"white"}}>
             <h1 className="fw-bold fs-1">Oupss erreur d'aiguillage, Marty</h1>
             <h2 className="fw-bold">Error 404</h2>
             <img
                 src={`${process.env.PUBLIC_URL}/assets/images/logo-white.png`}
-                width="500"
-                height="400"
+                width="400"
+                height="300"
                 alt="Back To 90s logo"
               />
 
             </Col>
-            lalalalal
           </Row>
         </Row>
 
