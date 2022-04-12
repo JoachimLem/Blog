@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 //Icons
 import { TiArrowBack } from "react-icons/ti";
@@ -18,7 +18,7 @@ const NotFound = () => {
           </Col>
           </Row>
 
-          <Row className="text-center">>
+          <Row className="text-center">
             <Col className="d-flex flex-column justify-content-end align-items-center" style={{color:"white"}}>
             <h1 className="fw-bold fs-1">Oupss erreur d'aiguillage, Marty</h1>
             <h2 className="fw-bold">Error 404</h2>
