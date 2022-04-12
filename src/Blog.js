@@ -4,6 +4,7 @@ import './Blog.css';
 // Components
 import Header from './components/Header';
 import Posts from './components/Posts';
+import NotFoundPage from './components/NotFoundPage';
 
 
 
@@ -13,6 +14,7 @@ function Blog() {
     <div className="App">
     <Header />
     <Posts />
+    <NotFoundPage />
     </div>
   );
 }
