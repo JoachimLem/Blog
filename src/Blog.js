@@ -5,6 +5,7 @@ import './Blog.css';
 import Header from './components/Header';
 import Posts from './components/Posts';
 import SinglePost from "./components/SinglePost";
+import Footer from "./components/Footer";
 
 
 
@@ -15,6 +16,7 @@ function Blog() {
     <Header />
     <Posts />
     <SinglePost />
+    <Footer />
   
     </div>
   );
