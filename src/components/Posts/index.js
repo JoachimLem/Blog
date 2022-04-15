@@ -13,7 +13,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 const Posts = () => (
 
   <main>
-    <Container fluid>
+    <Container fluid className="mt-5 pt-5">
       {/* Hero Ban. This is a new post star */}
       <TopPost />
       {/* .................................................... */}

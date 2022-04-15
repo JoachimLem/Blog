@@ -9,7 +9,7 @@ import { BsSearch } from 'react-icons/bs';
 
 const Header = () => (
   <header>
-    <Navbar expand="lg" sticky="top" style={{ backgroundColor: '#F6F5F5'}}>
+    <Navbar expand="lg" fixed="top" style={{ backgroundColor: '#F6F5F5'}}>
       <Container fluid className="justify-content-center">
 
 
