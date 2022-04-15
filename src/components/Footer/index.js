@@ -10,7 +10,7 @@ const Footer = () => {
 
   <footer>
     <Container fluid style={{backgroundColor:"#F6F5F5"}}>
-    <Row className="flex-column align-items-center justify-content-center">
+    <Row className="flex-column align-items-center justify-content-center flex-lg-row">
       <Col className=" text-center text-lg-start col">
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/logo-black.png`}
