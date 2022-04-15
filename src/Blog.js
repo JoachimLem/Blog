@@ -4,7 +4,6 @@ import './Blog.css';
 // Components
 import Header from './components/Header';
 import Posts from './components/Posts';
-import NotFoundPage from './components/NotFoundPage';
 import SinglePost from "./components/SinglePost";
 
 
@@ -16,7 +15,7 @@ function Blog() {
     <Header />
     <Posts />
     <SinglePost />
-    <NotFoundPage />
+  
     </div>
   );
 }

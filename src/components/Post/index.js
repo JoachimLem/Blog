@@ -12,7 +12,7 @@ const Post = () => (
 
 
 
-    <Card className="m-3 p-2" style={{ backgroundColor: "#F6F5F5" }}>
+    <Card className="m-3 p-2 border-0" style={{ backgroundColor: "#F6F5F5" }}>
 
       {/* ............................................................ */}
       {/* infos Post */}
