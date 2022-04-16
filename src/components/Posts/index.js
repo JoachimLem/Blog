@@ -7,7 +7,6 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 //Contents for PostPage
 import TopPost from '../TopPost';
 import PaginatedItems from '../Pagination';
-import Post from '../Post';
 import Tags from '../Tags';
 
 

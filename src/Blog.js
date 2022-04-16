@@ -4,7 +4,6 @@ import './Blog.css';
 // Components
 import Header from './components/Header';
 import Posts from './components/Posts';
-import SinglePost from "./components/SinglePost";
 import Footer from "./components/Footer";
 
 
@@ -14,8 +13,7 @@ function Blog() {
   return (
     <div className="App">
     <Header />
-    <Posts />
-    <SinglePost />
+    <Posts />  
     <Footer />
   
     </div>
