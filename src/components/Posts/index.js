@@ -43,7 +43,7 @@ const Posts = () => (
 
           </Row>
 
-          <Row>
+          <Row className="d-none d-lg-block">
             <Col>
               <TwitterTimelineEmbed
                 sourceType="profile"
