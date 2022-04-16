@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
+
+
 //Contents for PostPage
 import TopPost from '../TopPost';
 import Post from '../Post';
@@ -24,17 +27,33 @@ const Posts = () => (
 
         {/* List of Posts */}
         <Col lg="8">
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
         </Col>
         {/* .................................................. */}
 
 
         {/* Area for Tags Components */}
         <Col className="col 4">
-          <Tags />
+
+
+          <Row>
+
+            <Tags />
+
+          </Row>
+
+          <Row>
+            <Col>
+              <TwitterTimelineEmbed
+                sourceType="profile"
+                screenName="Backto90sOff"
+                options={{ height: 1000,  }}
+              />
+            </Col>
+          </Row>
         </Col>
         {/* .................................................. */}
 
