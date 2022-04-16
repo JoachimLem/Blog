@@ -4,7 +4,8 @@ import './Blog.css';
 // Components
 import Header from './components/Header';
 import Posts from './components/Posts';
-import Footer from "./components/Footer";
+import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 
 
@@ -14,6 +15,7 @@ function Blog() {
     <div className="App">
     <Header />
     <Posts />  
+<Contact />
     <Footer />
   
     </div>
