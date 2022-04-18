@@ -15,7 +15,7 @@ const TopPost = () => (
       <Row className=" position-relative" style={{ backgroundSize: "cover", backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/pogs.jpg)`, height: "500px", }}>
 
         <Col md="6" lg='5' xl="4" className="d-none d-lg-block position-absolute d-flex flex-column justify-content-between align-items-center rounded-bottom p-1" style={{ backgroundColor: "#F6F5F5", top: "0", left: "50px", height: "90%", }}>
-          <h1 className="fs-2 text-center my-3 fw-bold">Les pogs le jeu phénomène des cours d'école.</h1>
+          <h1 className="fs-2 text-center my-3 fw-bold title-font">Les pogs le jeu phénomène des cours d'école.</h1>
 
           <Row className="fw-bold my-2 mx-1 w-100" style={{ fontSize: '0.5rem', }}>
             <Col className="col-2 ">joalemweb</Col>
@@ -24,13 +24,13 @@ const TopPost = () => (
           </Row>
 
 
-          <Row className="m-2 my-3 p-3 justify-content-center fs-6" style={{ textAlign: "justify" }}>
+          <Row className="m-2 my-3 p-3 justify-content-center fs-6 title-font" style={{ textAlign: "justify" }}>
             <Col>Amet incididunt commodo sunt magna ea nulla. Ad eu esse fugiat qui sunt anim quis laborum non laborum veniam. Consequat laborum sint ex sunt. Velit laboris nisi mollit do fugiat sint tempor ut adipisicing labore est velit esse.</Col>
           </Row>
 
           <Row className="w-100 position-absolute bottom-0 text-center ">
             <Col>
-              <Button className="btn_read fw-bold btn-lg m-3" style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}>Lire l'article</Button>
+              <Button className="btn_read fw-bold btn-lg m-3 title-font" style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}>Lire l'article</Button>
             </Col>
           </Row>
         </Col>

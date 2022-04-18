@@ -33,8 +33,8 @@ const Post = ({currentItems}) => (
    {/* Post Text */}
    <Col className="col-lg-6 p-0 d-flex">
      <Card.Body className="d-flex flex-column justify-content-between">
-       <Card.Title className="fs-3 fw-bold text-center mb-3">Alerte à Malibu : La série qui à révelé Pamela Anderson</Card.Title>
-       <Card.Text>
+       <Card.Title className="fs-3 fw-bold text-center mb-3 title-font">Alerte à Malibu : La série qui à révelé Pamela Anderson</Card.Title>
+       <Card.Text className="title-font">
          This is a wider card with supporting text below as a natural lead-in to
          additional content. This content is a little bit longer.
          additional content. This content is a little bit longer.
@@ -44,7 +44,7 @@ const Post = ({currentItems}) => (
 
        <Row>
          <Col className="col-8">
-           <Button className="btn_read fw-bold btn-lg m-3" style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}>Lire l'article</Button>
+           <Button className="btn_read fw-bold btn-lg m-3 title-font" style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}>Lire l'article</Button>
          </Col>
 
          {/* Block for interaction with icons like & comments */}

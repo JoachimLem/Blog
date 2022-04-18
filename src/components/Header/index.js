@@ -38,7 +38,7 @@ const Header = () => (
             <Navbar.Collapse id="navbar-nav">
               <Nav className="text-center" >
                 <Nav.Link className="mx-2 fw-bold roboto" href="#home">Home</Nav.Link>
-                <Nav.Link className="mx-2 fw-bold" href="#link">Style</Nav.Link>
+                <Nav.Link className="mx-2 fw-bold" href="#link">Styles</Nav.Link>
                 <Nav.Link className="mx-2 fw-bold" href="#link">Medias</Nav.Link>
                 <Nav.Link className="mx-2 fw-bold" href="#link">Culture</Nav.Link>
                 <Nav.Link className="mx-2 fw-bold" href="#link">Contact</Nav.Link>

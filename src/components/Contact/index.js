@@ -40,12 +40,12 @@ const Contact = () => {
 
 
   return (
-    <Container className="d-flex flex-column align-items-center" style={{ minHeight: "85vh" }}>
+    <Container className="d-flex flex-column align-items-center title-font" style={{ minHeight: "85vh" }}>
 
 
       <Row className="text-center">
         <h1 className="font-weight-bold my-lg-5 mb-2" >Contact</h1>
-        <p className="mb-lg-5 fs-lg-4">Merci de nous laisser un petit message, nous ferons tous pour vous répondre dans les meilleurs délais.</p>
+        <p className="mb-lg-5 fs-lg-4 ">Merci de nous laisser un petit message, nous ferons tous pour vous répondre dans les meilleurs délais.</p>
       </Row>
 
 
@@ -113,14 +113,14 @@ const Contact = () => {
       <Row>
 
         {isSuccess ?
-          <Alert variant="success">message envoyé avec succes</Alert>
+          <Alert variant="success" className="text-center">message envoyé avec succes</Alert>
           :
           <p></p>
         }
 
 
         {isError ?
-          <Alert variant="danger">Erreur, veuillez rééssayer ultérieurement</Alert>
+          <Alert variant="danger" className="text-center">Erreur, veuillez rééssayer ultérieurement</Alert>
           :
           <p></p>
         }

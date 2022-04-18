@@ -41,21 +41,21 @@ const SinglePost = () => (
             <Row className="flex-column align-items-center">
               <Col>
                 <Card.Body className="d-flex flex-column justify-content-between">
-                  <Card.Title className="fs-3 fw-bold text-center mb-3">Alerte à Malibu : La série qui à révelé Pamela Anderson</Card.Title>
+                  <Card.Title className="fs-3 fw-bold text-center mb-3 title-font">Alerte à Malibu : La série qui à révelé Pamela Anderson</Card.Title>
                   <Card.Img className="p-2 rounded" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/baywatch.jpg`} width="500" height="400" />
 
 
                   <div className="dropdown-divider"></div>
 
                   {/* Post Text */}
-                  <Card.Text>
+                  <Card.Text className="title-font">
                     This is a wider card with supporting text below as a natural lead-in to
                     additional content. This content is a little bit longer.
                     additional content. This content is a little bit longer.
                     additional content. This content is a little bit longer.
                   </Card.Text>
 
-                  <Card.Text>
+                  <Card.Text className="title-font">
                     Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
                     Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
                     Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
@@ -71,7 +71,7 @@ const SinglePost = () => (
                   {/* Block for interaction with icons like & comments */}
                   <Row className="flex-row flex-lg-columns">
                     <Col className="text-start">
-                      <span className="d-none d-lg-inline"> Partagez si vous aimez : </span>
+                      <span className="d-none d-lg-inline title-font"> Partagez si vous aimez : </span>
                       <span className="p-1"> <BsTwitter size="2em" /></span>
                       <span className="p-1"><BsInstagram size="2em" /></span>
                       <span className="p-1"><BsFacebook size="2em" /></span>
