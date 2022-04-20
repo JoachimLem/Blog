@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 // Assets or Icons
 import { BsSearch } from 'react-icons/bs';
+import { lineBreakG } from 'acorn';
 
 
 
@@ -37,11 +39,11 @@ const Header = () => (
           <Col lg="6">
             <Navbar.Collapse id="navbar-nav">
               <Nav className="text-center" >
-                <Nav.Link className="mx-2 fw-bold roboto" href="#home">Home</Nav.Link>
-                <Nav.Link className="mx-2 fw-bold" href="#link">Styles</Nav.Link>
-                <Nav.Link className="mx-2 fw-bold" href="#link">Medias</Nav.Link>
-                <Nav.Link className="mx-2 fw-bold" href="#link">Culture</Nav.Link>
-                <Nav.Link className="mx-2 fw-bold" href="#link">Contact</Nav.Link>
+                <Nav.Link as= {Link} to="/" className="mx-2 fw-bold roboto">Home</Nav.Link>
+                <Nav.Link as= {Link} to="/styles" className="mx-2 fw-bold">Styles</Nav.Link>
+                <Nav.Link as= {Link} to="/medias" className="mx-2 fw-bold">Medias</Nav.Link>
+                <Nav.Link as= {Link} to="/culture" className="mx-2 fw-bold">Culture</Nav.Link>
+                <Nav.Link as= {Link} to="/contact" className="mx-2 fw-bold">Contact</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Col>

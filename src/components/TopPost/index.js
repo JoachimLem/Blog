@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Col, Row, Button } from 'react-bootstrap';
 
 
@@ -30,7 +31,7 @@ const TopPost = () => (
 
           <Row className="w-100 position-absolute bottom-0 text-center ">
             <Col>
-              <Button className="btn_read fw-bold btn-lg m-3 title-font" style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}>Lire l'article</Button>
+              <Button as={Link} to="/lespogs" className="btn_read fw-bold btn-lg m-3 title-font" style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}>Lire l'article</Button>
             </Col>
           </Row>
         </Col>

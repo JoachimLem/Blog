@@ -40,7 +40,7 @@ const Contact = () => {
 
 
   return (
-    <Container className="d-flex flex-column align-items-center title-font" style={{ minHeight: "85vh" }}>
+    <Container className="d-flex flex-column align-items-center title-font" style={{ minHeight: "100vh" }}>
 
 
       <Row className="text-center">
