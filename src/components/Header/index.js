@@ -1,15 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Container, Row, Col, Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 // Assets or Icons
 import { BsSearch } from 'react-icons/bs';
-import { lineBreakG } from 'acorn';
 
 
 
 
-const Header = () => (
+
+const Header = ({categories}) => {
+              console.log(categories);
+
+
+              return (
   <header>
     <Navbar expand="lg" fixed="top" style={{ backgroundColor: '#F6F5F5'}}>
       <Container fluid className="justify-content-center">
@@ -39,11 +44,20 @@ const Header = () => (
           <Col lg="6">
             <Navbar.Collapse id="navbar-nav">
               <Nav className="text-center" >
-                <Nav.Link as= {Link} to="/" className="mx-2 fw-bold roboto">Home</Nav.Link>
-                <Nav.Link as= {Link} to="/styles" className="mx-2 fw-bold">Styles</Nav.Link>
-                <Nav.Link as= {Link} to="/medias" className="mx-2 fw-bold">Medias</Nav.Link>
-                <Nav.Link as= {Link} to="/culture" className="mx-2 fw-bold">Culture</Nav.Link>
-                <Nav.Link as= {Link} to="/contact" className="mx-2 fw-bold">Contact</Nav.Link>
+             
+
+               {/* Categories in NavBar */}
+               {categories.map((category)=>(
+                  <Nav.Link 
+                  key={category.id}
+                  as= {Link} 
+                  to={category.attributes.category_route}
+                  className="mx-2 fw-bold roboto">
+                    {category.attributes.category_name}
+                    
+                    </Nav.Link>
+                ))}
+            
               </Nav>
             </Navbar.Collapse>
           </Col>
@@ -69,6 +83,17 @@ const Header = () => (
       </Container>
     </Navbar>
   </header>
-)
+)};
+
+Header.propTypes = {
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({ 
+      category_name: PropTypes.string,
+      category_route: PropTypes.string
+    }).isRequired,
+  ).isRequired,
+}
+
+
 
 export default Header;

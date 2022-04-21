@@ -9,18 +9,22 @@ import { BsFillHeartFill } from 'react-icons/bs'; // Icon Hearth for like
 
 
 
-const Post = ({currentItems}) => (
+const Post = ({id,attributes}) => {
+
+
+
+return (
   <article>
 
 
-{currentItems && currentItems.map((post) =>(
- <Card className="m-3 p-2 border-0" style={{ backgroundColor: "#F6F5F5" }}>
+
+ <Card key={id} className="m-3 p-2 border-0" style={{ backgroundColor: "#F6F5F5" }}>
 
  {/* ............................................................ */}
  {/* infos Post */}
  <Row className="fw-bold" >
-   <Col>{post}</Col>
-   <Col className="text-end">05 avril 2022 / Temps de lecture : 2 min</Col>
+   <Col>{attributes.Author}</Col>
+   <Col className="text-end">{attributes.Published }/ Temps de lecture : {attributes.Reading_time }min</Col>
  </Row>
 
 
@@ -33,13 +37,9 @@ const Post = ({currentItems}) => (
    {/* Post Text */}
    <Col className="col-lg-6 p-0 d-flex">
      <Card.Body className="d-flex flex-column justify-content-between">
-       <Card.Title className="fs-3 fw-bold text-center mb-3 title-font">Alerte à Malibu : La série qui à révelé Pamela Anderson</Card.Title>
+       <Card.Title className="fs-3 fw-bold text-center mb-3 title-font">{attributes.Title}</Card.Title>
        <Card.Text className="title-font">
-         This is a wider card with supporting text below as a natural lead-in to
-         additional content. This content is a little bit longer.
-         additional content. This content is a little bit longer.
-         additional content. This content is a little bit longer.
-     
+        {attributes.Introduction}
        </Card.Text>
 
        <Row>
@@ -68,16 +68,16 @@ const Post = ({currentItems}) => (
 
    {/* Post image */}
    <Col className="col-lg-6">
-     <Card.Img className="p-2 rounded" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/baywatch.jpg`} width="100%" height="100%" />
+     <Card.Img className="p-2 rounded" variant="top" src={attributes.image.data.attributes.formats.medium.url} width="100%" height="100%" />
    </Col>
  </Row>
 
 </Card>
-))}
+
    
 
   </article>
-);
+)}
 
 
 export default Post;
