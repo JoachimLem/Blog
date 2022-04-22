@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 
 
@@ -10,7 +11,7 @@ import { BsFillHeartFill } from 'react-icons/bs'; // Icon Hearth for like
 
 
 const Post = ({id,attributes}) => {
-
+  const navigate = useNavigate();
 
 
 return (
@@ -44,7 +45,9 @@ return (
 
        <Row>
          <Col className="col-8">
-           <Button className="btn_read fw-bold btn-lg m-3 title-font" style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}>Lire l'article</Button>
+           <Button className="btn_read fw-bold btn-lg m-3 title-font" 
+           style={{ backgroundColor: "#F6F5F5", color: "black", borderRadius: "20px" }}
+           onClick={()=>navigate(`/article/${attributes.Slug}`)}>Lire l'article</Button>
          </Col>
 
          {/* Block for interaction with icons like & comments */}

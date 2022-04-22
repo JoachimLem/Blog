@@ -14,7 +14,7 @@ import Post from '../Post';
 import { Container, Row, Col } from 'react-bootstrap';
 
 
-const Posts = ({posts}) =>{
+const Posts = ({posts, tags}) =>{
   console.log(`je suis dans le composant Post : ${posts}`);
 
   
@@ -53,8 +53,12 @@ const Posts = ({posts}) =>{
   
   
             <Row>
-  
-              <Tags />
+         
+           
+              <Tags 
+              tags={tags}
+              />
+          
   
             </Row>
   

@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Posts from './components/Posts';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import SinglePost from './components/SinglePost';
 import NotFound from './components/NotFoundPage';
 
 
@@ -33,6 +34,7 @@ function Blog() {
   // State
   const [categoriesState, setCategoriesState] = useState([]);
   const [postsState, setPostsState] = useState([]);
+  const [tagsState,setTagsState] = useState([]);
 
   const loadCategories = () => {
     axios.get(`http://localhost:1337/api/categories`)
@@ -55,12 +57,24 @@ function Blog() {
   };
 
 
+  const loadTags = () => {
+    axios.get(`http://localhost:1337/api/tags`)
+      .then((response) => {
+        setTagsState(response.data.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  };
+
+
 
 
   // Fetch Data Categories
   useEffect(() => {
     loadCategories();
     loadPosts();
+    loadTags();
   }, []);
 
 
@@ -91,9 +105,15 @@ function Blog() {
               return (<Route
                 key={category.attributes.category_route}
                 path={category.attributes.category_route}
-                element={<Posts posts={getPostsByCategory(postsState, category.attributes)} />} />)
+                element={
+                <Posts 
+                  posts={getPostsByCategory(postsState, category.attributes)} 
+                  tags={tagsState}
+                />} />)
 
             })}
+
+            <Route path='/article/:slug' element={<SinglePost posts={postsState} />} />
 
 
 

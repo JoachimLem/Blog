@@ -1,15 +1,33 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import PropositionArticle from '../PopositionArticle';
+import NotFound from '../NotFoundPage';
 
 // Icons
 import { ImBubble } from "react-icons/im"; //Icon Bubble for comments
 import { BsFillHeartFill, BsFacebook, BsTwitter, BsInstagram, BsFillArrowLeftSquareFill } from 'react-icons/bs'; // Icon Hearth for like
 
 
-const SinglePost = () => (
+const SinglePost = ({posts}) => {
 
+  const params = useParams();
+console.log(`singlepost : ${posts}`);
+console.log(`singlepost params:`+ params);
+console.log(params);
+
+  const currentPost = posts.find((post) => post.attributes.Slug === params.slug);
+console.log(currentPost);
+
+  if (!currentPost){
+    console.log(`je suis dans le currentpost dans singlePost : ${currentPost}`);
+console.log(`singlepost : ${params}`);
+
+    return <NotFound />
+  }
+
+return (
   <section>
     <Container fluid>
 
@@ -27,9 +45,9 @@ const SinglePost = () => (
             {/* ............................................................ */}
             {/* infos Post */}
             <Row className="fw-bold h-100" >
-              <Col lg={7} className="text-start col-6">joalemweb</Col>
-              <Col lg={2} className="text-end col-6">05 avril 2022 </Col>
-              <Col sm={12} lg={3} className="text-start ">Temps de lecture : 2 min</Col>
+              <Col lg={7} className="text-start col-6">{currentPost.attributes.Author}</Col>
+              <Col lg={2} className="text-end col-6">{currentPost.attributes.Published} </Col>
+              <Col sm={12} lg={3} className="text-start ">Temps de lecture : {currentPost.attributes.Reading_time} min</Col>
             </Row>
 
 
@@ -41,28 +59,19 @@ const SinglePost = () => (
             <Row className="flex-column align-items-center">
               <Col>
                 <Card.Body className="d-flex flex-column justify-content-between">
-                  <Card.Title className="fs-3 fw-bold text-center mb-3 title-font">Alerte à Malibu : La série qui à révelé Pamela Anderson</Card.Title>
-                  <Card.Img className="p-2 rounded" variant="top" src={`${process.env.PUBLIC_URL}/assets/images/baywatch.jpg`} width="500" height="400" />
+                  <Card.Title className="fs-3 fw-bold text-center mb-3 title-font">{currentPost.attributes.Title}</Card.Title>
+                  <Card.Img className="p-2 rounded" variant="top" src={currentPost.attributes.image.data.attributes.formats.large.url} width="500" height="400" />
 
 
                   <div className="dropdown-divider"></div>
 
                   {/* Post Text */}
                   <Card.Text className="title-font">
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                    additional content. This content is a little bit longer.
-                    additional content. This content is a little bit longer.
+                    {currentPost.attributes.Introduction}
                   </Card.Text>
 
                   <Card.Text className="title-font">
-                    Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
-                    Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
-                    Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
-                    Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
-                    Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
-                    Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
-                    Non incididunt proident id ut irure aliquip dolore elit. Adipisicing excepteur eu tempor eiusmod id tempor ex id eu. In proident in est nisi fugiat cillum. Culpa in duis officia do. Laborum excepteur elit commodo velit incididunt sit incididunt.
+                  {currentPost.attributes.Article}
                   </Card.Text>
 
 
@@ -119,6 +128,6 @@ const SinglePost = () => (
     </Container>
 
   </section>
-)
+)}
 
 export default SinglePost;
