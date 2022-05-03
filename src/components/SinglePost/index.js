@@ -29,7 +29,7 @@ console.log(`singlepost : ${params}`);
 
 return (
   <section>
-    <Container fluid>
+    <Container fluid className="mt-5 pt-5">
 
       <Row>
         <Row className="justify-content-start d-lg-none">

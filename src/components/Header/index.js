@@ -13,7 +13,7 @@ import { BsSearch } from 'react-icons/bs';
 
 const Header = ({ categories, posts }) => {
   const [inputSearch, setInputSearch] = useState("");
-  const [filteredPosts,setFilteredPosts] = useState("");
+
   const navigate=useNavigate();
   console.log(posts);
 
@@ -29,17 +29,23 @@ const Header = ({ categories, posts }) => {
     event.preventDefault();
     if(inputSearch) {
       let textSearch = inputSearch.toLowerCase();
+     
            
       const filteredP = posts.filter((post) => {
         return post.attributes.Title.toLowerCase().includes(textSearch) ||post.attributes.Introduction.toLowerCase().includes(textSearch);
       });
-      setFilteredPosts(filteredP);
+     
       console.log(filteredP);
-      navigate('/results',{state:filteredPosts});
+      
+      if (filteredP.length>0){
+      navigate('/results',{state:filteredP});
+    }else{
+      alert("Aucun article ne correpond à votre recherche, Veuillez rééssayer avec d'autres mots clés")
+    }
 
    
     }
-    else {alert("Pardon je n\'ai pas compris, veuillez refaire une recherche")}
+    else {alert("Pardon je n'ai pas compris, veuillez refaire une recherche")}
   }
 
 
@@ -53,7 +59,7 @@ const Header = ({ categories, posts }) => {
 
           <Row className="align-items-center w-100">
             <Col xs='6' lg='2' >
-              <Navbar.Brand href="#home">
+              <Navbar.Brand as={Link} to="/">
                 <img
                   src={`${process.env.PUBLIC_URL}/assets/images/logo-black.png`}
                   width="120"
@@ -110,7 +116,7 @@ const Header = ({ categories, posts }) => {
                 onChange={handleSearch}
               />
            
-              <Button style={{ backgroundColor: "rgba(40, 38, 38, 1)", borderRadius: "5px" }}><BsSearch /></Button>
+              <Button type="submit" style={{ backgroundColor: "rgba(40, 38, 38, 1)", borderRadius: "5px" }}><BsSearch /></Button>
             </Form>
           </Col>
         </Container>

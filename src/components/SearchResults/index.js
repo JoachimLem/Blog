@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import {Container} from 'react-bootstrap';
 import Post from '../Post'
 
 
@@ -10,9 +11,13 @@ const SearchResults = ({ filteredPosts }) => {
   return (
 
     <section>
+      <Container fluid className="mt-5 pt-5">
+
+  <p>Nombre de résultat : {state.length}</p>
 
 
-      {state.map((post) => {
+
+       {state.map((post) => {
         console.log(post);
         return (
           <Post key={post.id}
@@ -20,10 +25,9 @@ const SearchResults = ({ filteredPosts }) => {
           />
         )
       }
-
-
       )}
-
+ 
+      </Container>
 
     </section>
   )
