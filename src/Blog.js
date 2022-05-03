@@ -12,6 +12,7 @@ import Posts from './components/Posts';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import SinglePost from './components/SinglePost';
+import SearchResults from './components/SearchResults';
 import NotFound from './components/NotFoundPage';
 
 
@@ -34,7 +35,7 @@ function Blog() {
   // State
   const [categoriesState, setCategoriesState] = useState([]);
   const [postsState, setPostsState] = useState([]);
-  const [tagsState,setTagsState] = useState([]);
+  const [tagsState, setTagsState] = useState([]);
 
   const loadCategories = () => {
     axios.get(`http://localhost:1337/api/categories`)
@@ -88,7 +89,9 @@ function Blog() {
 
   return (
     <div className="App">
-      <Header categories={categoriesState} />
+      <Header
+        categories={categoriesState}
+        posts={postsState} />
 
 
       <Routes>
@@ -106,14 +109,15 @@ function Blog() {
                 key={category.attributes.category_route}
                 path={category.attributes.category_route}
                 element={
-                <Posts 
-                  posts={getPostsByCategory(postsState, category.attributes)} 
-                  tags={tagsState}
-                />} />)
+                  <Posts
+                    posts={getPostsByCategory(postsState, category.attributes)}
+                    tags={tagsState}
+                  />} />)
 
             })}
 
-            <Route path='/article/:slug' element={<SinglePost posts={postsState} />} />
+        <Route path='/article/:slug' element={<SinglePost posts={postsState} />} />
+        <Route path='/results' element={<SearchResults posts={postsState} />} />
 
 
 
